@@ -1,11 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Stevie's Random Course Selector </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PGA Course Picker</title>
+<meta name="theme-color" content="#0b3d24">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="PGA Picker">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b3d24'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle'%3E%E2%9B%B3%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b3d24'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle'%3E%E2%9B%B3%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22PGA%20Course%20Picker%22%2C%22short_name%22%3A%22PGA%20Picker%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%230b3d24%22%2C%22theme_color%22%3A%22%230b3d24%22%2C%22start_url%22%3A%22.%22%7D">
+<style>
+  :root{
+    --bg1:#0b3d24;
+    --bg2:#0f5c33;
+    --card:#0e2a1a;
+    --accent:#d4ff5f;
+    --text:#f2fff0;
+    --muted:#9fd3ad;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    height:100%;
+    margin:0;
+  }
+  body{
+    background: radial-gradient(circle at 30% 20%, var(--bg2), var(--bg1) 70%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100%;
+    padding: 24px;
+  }
+  .wrap{
+    width:100%;
+    max-width:480px;
+    text-align:center;
+  }
+  h1{
+    font-size: 1.3rem;
+    font-weight:600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 28px 0;
+  }
+  .digits{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    margin-bottom: 32px;
+  }
+  .card{
+    background: var(--card);
+    border: 1px solid rgba(212,255,95,0.25);
+    border-radius: 20px;
+    padding: 28px 12px;
+    flex: 1;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+  .label{
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .range{
+    font-size: 0.7rem;
+    color: var(--muted);
+    opacity: 0.7;
+    margin-bottom: 14px;
+  }
+  .digit{
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    transition: transform 0.15s ease;
+  }
+  .digit.roll{
+    transform: scale(1.08);
+  }
+  button{
+    background: var(--accent);
+    color: #0b3d24;
+    border: none;
+    border-radius: 999px;
+    padding: 16px 40px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    cursor:pointer;
+    box-shadow: 0 8px 20px rgba(212,255,95,0.25);
+  }
+  button:active{
+    transform: scale(0.97);
+  }
+  .sub{
+    margin-top: 18px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    opacity: 0.8;
+  }
+</style>
 </head>
 <body>
-    <h1>Hello, Stevie</h1>
-    <p></p>
+  <div class="wrap">
+    <h1>2K25 PGA &mdash; Course Picker</h1>
+    <div class="digits">
+      <div class="card">
+        <div class="label">Page</div>
+        <div class="range">1&ndash;7</div>
+        <div class="digit" id="digit1">–</div>
+      </div>
+      <div class="card">
+        <div class="label">Course</div>
+        <div class="range">1&ndash;8</div>
+        <div class="digit" id="digit2">–</div>
+      </div>
+    </div>
+    <button id="rollBtn">Roll</button>
+    <div class="sub" id="statusLine">Tap Roll to pick today's course</div>
+  </div>
+
+<script>
+  const d1 = document.getElementById('digit1');
+  const d2 = document.getElementById('digit2');
+  const btn = document.getElementById('rollBtn');
+  const status = document.getElementById('statusLine');
+
+  function randInt(min, max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function roll(){
+    const page = randInt(1, 7);
+    const course = randInt(1, 8);
+
+    d1.classList.add('roll');
+    d2.classList.add('roll');
+    d1.textContent = page;
+    d2.textContent = course;
+    status.textContent = `Page ${page}, Course ${course}`;
+
+    setTimeout(() => {
+      d1.classList.remove('roll');
+      d2.classList.remove('roll');
+    }, 150);
+  }
+
+  btn.addEventListener('click', roll);
+</script>
 </body>
 </html>
