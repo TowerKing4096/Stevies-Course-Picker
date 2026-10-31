@@ -9,155 +9,173 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="PGA Picker">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b3d24'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle'%3E%E2%9B%B3%3C/text%3E%3C/svg%3E">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b3d24'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle'%3E%E2%9B%B3%3C/text%3E%3C/svg%3E">
-<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22PGA%20Course%20Picker%22%2C%22short_name%22%3A%22PGA%20Picker%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%230b3d24%22%2C%22theme_color%22%3A%22%230b3d24%22%2C%22start_url%22%3A%22.%22%7D">
+<link rel="icon" href="avatar_lyndon.png">
+<link rel="apple-touch-icon" href="avatar_lyndon.png">
 <style>
-  :root{
-    --bg1:#0b3d24;
-    --bg2:#0f5c33;
-    --card:#0e2a1a;
-    --accent:#d4ff5f;
-    --text:#f2fff0;
-    --muted:#9fd3ad;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-  *{box-sizing:border-box;}
-  html,body{
-    height:100%;
-    margin:0;
-  }
-  body{
-    background: radial-gradient(circle at 30% 20%, var(--bg2), var(--bg1) 70%);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    color: var(--text);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:100%;
-    padding: 24px;
-  }
-  .wrap{
-    width:100%;
-    max-width:480px;
-    text-align:center;
-  }
-  h1{
-    font-size: 1.3rem;
-    font-weight:600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 28px 0;
-  }
-  .digits{
-    display:flex;
-    gap:16px;
-    justify-content:center;
-    margin-bottom: 32px;
-  }
-  .card{
-    background: var(--card);
-    border: 1px solid rgba(212,255,95,0.25);
-    border-radius: 20px;
-    padding: 28px 12px;
-    flex: 1;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  }
-  .label{
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-    margin-bottom: 10px;
-  }
-  .range{
-    font-size: 0.7rem;
-    color: var(--muted);
-    opacity: 0.7;
-    margin-bottom: 14px;
-  }
-  .digit{
-    font-size: 5rem;
-    font-weight: 800;
-    line-height: 1;
-    color: var(--accent);
-    font-variant-numeric: tabular-nums;
-    transition: transform 0.15s ease;
-  }
-  .digit.roll{
-    transform: scale(1.08);
-  }
-  button{
-    background: var(--accent);
-    color: #0b3d24;
-    border: none;
-    border-radius: 999px;
-    padding: 16px 40px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    cursor:pointer;
-    box-shadow: 0 8px 20px rgba(212,255,95,0.25);
-  }
-  button:active{
-    transform: scale(0.97);
-  }
-  .sub{
-    margin-top: 18px;
-    font-size: 0.8rem;
-    color: var(--muted);
-    opacity: 0.8;
-  }
+:root{
+  --bg1:#0b3d24;
+  --bg2:#0f5c33;
+  --card:#0e2a1a;
+  --accent:#d4ff5f;
+  --text:#f2fff0;
+  --muted:#9fd3ad;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+*{box-sizing:border-box;}
+html,body{height:100%;margin:0;}
+body{
+  background: radial-gradient(circle at 30% 20%, var(--bg2), var(--bg1) 70%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100%;
+  padding: 24px;
+}
+.wrap{width:100%;max-width:480px;text-align:center;}
+.header{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 24px 0;}
+.avatar{
+  width:64px;height:64px;border-radius:50%;
+  border:2px solid var(--accent);
+  object-fit:cover;flex:0 0 auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+h1{
+  font-size:1.1rem;font-weight:600;letter-spacing:0.04em;
+  text-transform:uppercase;color:var(--muted);margin:0;text-align:left;
+}
+.digits{display:flex;gap:16px;justify-content:center;margin-bottom:20px;}
+.card{
+  background: var(--card);
+  border: 1px solid rgba(212,255,95,0.25);
+  border-radius: 20px;
+  padding: 28px 12px;
+  flex: 1;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+.label{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:10px;}
+.digit{
+  font-size:5rem;font-weight:800;line-height:1;color:var(--accent);
+  font-variant-numeric: tabular-nums;transition: transform 0.15s ease;
+}
+.digit.roll{transform: scale(1.08);}
+.course-card{
+  background: var(--card);
+  border: 1px solid rgba(212,255,95,0.3);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+.course-img{
+  display:none;
+  width:100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.course-img.show{display:block;}
+button{
+  background: var(--accent);color:#0b3d24;border:none;border-radius:999px;
+  padding:16px 40px;font-size:1.05rem;font-weight:700;letter-spacing:0.03em;cursor:pointer;
+  box-shadow: 0 8px 20px rgba(212,255,95,0.25);
+}
+button:active{transform: scale(0.97);}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>2K25 PGA &mdash; Course Picker</h1>
-    <div class="digits">
-      <div class="card">
-        <div class="label">Page</div>
-        <div class="range">1&ndash;7</div>
-        <div class="digit" id="digit1">–</div>
-      </div>
-      <div class="card">
-        <div class="label">Course</div>
-        <div class="range">1&ndash;8</div>
-        <div class="digit" id="digit2">–</div>
-      </div>
-    </div>
-    <button id="rollBtn">Roll</button>
-    <div class="sub" id="statusLine">Tap Roll to pick today's course</div>
+<div class="wrap">
+
+  <div class="header">
+    <img class="avatar" src="avatar_lyndon.png" alt="Lyndon">
+    <h1 id="appTitle">Lyndon's PGA Course Selector</h1>
   </div>
 
+  <div class="digits">
+    <div class="card">
+      <div class="label">Page</div>
+      <div class="digit" id="digit1">&ndash;</div>
+    </div>
+    <div class="card">
+      <div class="label">Course</div>
+      <div class="digit" id="digit2">&ndash;</div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <img class="course-img" id="courseImg" alt="">
+  </div>
+
+  <button id="rollBtn">Roll</button>
+</div>
+
 <script>
-  const d1 = document.getElementById('digit1');
-  const d2 = document.getElementById('digit2');
-  const btn = document.getElementById('rollBtn');
-  const status = document.getElementById('statusLine');
+// Optional personalisation: ?player=Name changes the title
+const urlParams = new URLSearchParams(window.location.search);
+const playerName = urlParams.get('player');
+if (playerName) {
+  document.getElementById('appTitle').textContent = `${playerName}'s PGA Course Selector`;
+}
 
-  function randInt(min, max){
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+// Courses as they appear in-game, grouped by the game's page and slot order.
+// Page 7 has 5 courses (Charles Schwab Challenge Course is excluded).
+const courseMatrix = {
+  1: ["Royal Birkdale Golf Club","Aronimink Golf Club","Duzznt Matta Country Club","Fields Ranch East at PGA Frisco",
+      "Shinnecock Hills Golf Club","Rusty Meadows Golf Club","Barren Gorge","The Old Course at St Andrews Links"],
+  2: ["Royal Portrush Golf Club","Quail Hollow Club","Pebble Beach Golf Links","TPC Sawgrass",
+      "Oakmont Country Club","Huntington Sound","East Lake Golf Club","Riviera Country Club"],
+  3: ["TPC Scottsdale","Marigot Cove GC","Pinehurst No. 2","Spyglass Hill Golf Course",
+      "Salem Creek CC","Calamity Bay Golf Club","TPC Summerlin","Torrey Pines South"],
+  4: ["Torrey Pines North","Payne's Valley","Copperhead Course at Innisbrook","TPC San Antonio",
+      "Bay Hill Club & Lodge","Top of the Rock","St. George's Golf & CC","TPC Southwind"],
+  5: ["TPC River Highlands","TPC Deere Run","TPC Boston","Detroit Golf Club",
+      "TPC Twin Cities","TPC Louisiana","Al Barsha Resort - Palms Course","Atlantic Beach CC"],
+  6: ["Yoho River Golf Course","Playa Saona Golf Course","Lone Grove Golf Course","Greenmont Country Club",
+      "The Elevens Club","Nipawin Golf & CC","Highfield Golf Course","Georgetown Island GC"],
+  7: ["Emery Beach CC","Central Otago Golf Club","Hauteluce","Eagle Hill Country Club","Al Barsha Resort - Sands Course"]
+};
 
-  function roll(){
-    const page = randInt(1, 7);
-    const course = randInt(1, 8);
+// Same rule used for the image filenames: lowercase, apostrophes removed,
+// everything else non-alphanumeric becomes an underscore.
+function slugify(name) {
+  return name.toLowerCase().replace(/'/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+}
 
-    d1.classList.add('roll');
-    d2.classList.add('roll');
-    d1.textContent = page;
-    d2.textContent = course;
-    status.textContent = `Page ${page}, Course ${course}`;
+const d1 = document.getElementById('digit1');
+const d2 = document.getElementById('digit2');
+const courseImg = document.getElementById('courseImg');
+const btn = document.getElementById('rollBtn');
 
-    setTimeout(() => {
-      d1.classList.remove('roll');
-      d2.classList.remove('roll');
-    }, 150);
-  }
+const pageNumbers = Object.keys(courseMatrix).map(Number);
 
-  btn.addEventListener('click', roll);
+function roll() {
+  const page = pageNumbers[Math.floor(Math.random() * pageNumbers.length)];
+  const courses = courseMatrix[page];
+  const slotIndex = Math.floor(Math.random() * courses.length);
+  const slot = slotIndex + 1;
+  const name = courses[slotIndex];
+
+  d1.classList.add('roll');
+  d2.classList.add('roll');
+  d1.textContent = page;
+  d2.textContent = slot;
+
+  // Show the matching image; hide it if the file is missing
+  courseImg.classList.remove('show');
+  courseImg.onload = () => courseImg.classList.add('show');
+  courseImg.onerror = () => courseImg.classList.remove('show');
+  courseImg.alt = name;
+  courseImg.src = `app_images/${slugify(name)}.png`;
+
+  setTimeout(() => {
+    d1.classList.remove('roll');
+    d2.classList.remove('roll');
+  }, 150);
+}
+
+btn.addEventListener('click', roll);
 </script>
 </body>
 </html>

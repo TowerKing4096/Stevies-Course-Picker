@@ -1,0 +1,54 @@
+page,slot,course_name,slug,filename
+1,1,Royal Birkdale Golf Club,royal_birkdale_golf_club,royal_birkdale_golf_club.png
+1,2,Aronimink Golf Club,aronimink_golf_club,aronimink_golf_club.png
+1,3,Duzznt Matta Country Club,duzznt_matta_country_club,duzznt_matta_country_club.png
+1,4,Fields Ranch East at PGA Frisco,fields_ranch_east_at_pga_frisco,fields_ranch_east_at_pga_frisco.png
+1,5,Shinnecock Hills Golf Club,shinnecock_hills_golf_club,shinnecock_hills_golf_club.png
+1,6,Rusty Meadows Golf Club,rusty_meadows_golf_club,rusty_meadows_golf_club.png
+1,7,Barren Gorge,barren_gorge,barren_gorge.png
+1,8,The Old Course at St Andrews Links,the_old_course_at_st_andrews_links,the_old_course_at_st_andrews_links.png
+2,1,Royal Portrush Golf Club,royal_portrush_golf_club,royal_portrush_golf_club.png
+2,2,Quail Hollow Club,quail_hollow_club,quail_hollow_club.png
+2,3,Pebble Beach Golf Links,pebble_beach_golf_links,pebble_beach_golf_links.png
+2,4,TPC Sawgrass,tpc_sawgrass,tpc_sawgrass.png
+2,5,Oakmont Country Club,oakmont_country_club,oakmont_country_club.png
+2,6,Huntington Sound,huntington_sound,huntington_sound.png
+2,7,East Lake Golf Club,east_lake_golf_club,east_lake_golf_club.png
+2,8,Riviera Country Club,riviera_country_club,riviera_country_club.png
+3,1,TPC Scottsdale,tpc_scottsdale,tpc_scottsdale.png
+3,2,Marigot Cove GC,marigot_cove_gc,marigot_cove_gc.png
+3,3,Pinehurst No. 2,pinehurst_no_2,pinehurst_no_2.png
+3,4,Spyglass Hill Golf Course,spyglass_hill_golf_course,spyglass_hill_golf_course.png
+3,5,Salem Creek CC,salem_creek_cc,salem_creek_cc.png
+3,6,Calamity Bay Golf Club,calamity_bay_golf_club,calamity_bay_golf_club.png
+3,7,TPC Summerlin,tpc_summerlin,tpc_summerlin.png
+3,8,Torrey Pines South,torrey_pines_south,torrey_pines_south.png
+4,1,Torrey Pines North,torrey_pines_north,torrey_pines_north.png
+4,2,Payne's Valley,paynes_valley,paynes_valley.png
+4,3,Copperhead Course at Innisbrook,copperhead_course_at_innisbrook,copperhead_course_at_innisbrook.png
+4,4,TPC San Antonio,tpc_san_antonio,tpc_san_antonio.png
+4,5,Bay Hill Club & Lodge,bay_hill_club_lodge,bay_hill_club_lodge.png
+4,6,Top of the Rock,top_of_the_rock,top_of_the_rock.png
+4,7,St. George's Golf & CC,st_georges_golf_cc,st_georges_golf_cc.png
+4,8,TPC Southwind,tpc_southwind,tpc_southwind.png
+5,1,TPC River Highlands,tpc_river_highlands,tpc_river_highlands.png
+5,2,TPC Deere Run,tpc_deere_run,tpc_deere_run.png
+5,3,TPC Boston,tpc_boston,tpc_boston.png
+5,4,Detroit Golf Club,detroit_golf_club,detroit_golf_club.png
+5,5,TPC Twin Cities,tpc_twin_cities,tpc_twin_cities.png
+5,6,TPC Louisiana,tpc_louisiana,tpc_louisiana.png
+5,7,Al Barsha Resort - Palms Course,al_barsha_resort_palms_course,al_barsha_resort_palms_course.png
+5,8,Atlantic Beach CC,atlantic_beach_cc,atlantic_beach_cc.png
+6,1,Yoho River Golf Course,yoho_river_golf_course,yoho_river_golf_course.png
+6,2,Playa Saona Golf Course,playa_saona_golf_course,playa_saona_golf_course.png
+6,3,Lone Grove Golf Course,lone_grove_golf_course,lone_grove_golf_course.png
+6,4,Greenmont Country Club,greenmont_country_club,greenmont_country_club.png
+6,5,The Elevens Club,the_elevens_club,the_elevens_club.png
+6,6,Nipawin Golf & CC,nipawin_golf_cc,nipawin_golf_cc.png
+6,7,Highfield Golf Course,highfield_golf_course,highfield_golf_course.png
+6,8,Georgetown Island GC,georgetown_island_gc,georgetown_island_gc.png
+7,1,Emery Beach CC,emery_beach_cc,emery_beach_cc.png
+7,2,Central Otago Golf Club,central_otago_golf_club,central_otago_golf_club.png
+7,3,Hauteluce,hauteluce,hauteluce.png
+7,4,Eagle Hill Country Club,eagle_hill_country_club,eagle_hill_country_club.png
+7,5,Al Barsha Resort - Sands Course,al_barsha_resort_sands_course,al_barsha_resort_sands_course.png
